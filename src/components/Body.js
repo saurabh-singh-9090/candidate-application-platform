@@ -7,6 +7,7 @@ const Body = () => {
   const [jobData, setJobData] = useState([]);
   const [limit, setLimit] = useState(3);
   const [loading, setLoading] = useState(true);
+  const [fetchedJobIds, setFetchedJobIds] = useState([]);
 
   const fetchJobData = async () => {
     const myHeaders = new Headers();
@@ -25,7 +26,19 @@ const Body = () => {
 
     const response = await fetch(WEEKDAY_API, requestOptions);
     const data = await response.json();
-    setJobData((prev) => [...prev, ...data.jdList]);
+    // setJobData((prev) => [...prev, ...data.jdList]);
+
+    // Filtering out already fetched job card IDs
+    const newJobData = data.jdList.filter(
+      (job) => !fetchedJobIds.includes(job.jdUid)
+    );
+
+    setJobData((prev) => [...prev, ...newJobData]);
+    setFetchedJobIds((prev) => [
+      ...prev,
+      ...newJobData.map((job) => job.jdUid),
+    ]);
+
     setLoading(false);
     console.log("DATA--->>>", data);
   };
@@ -55,12 +68,12 @@ const Body = () => {
 
   return (
     <div className="card-container">
-      {loading ? (
-        <Loader />
-      ) : (
-        jobData?.map((data) => 
-        <JobCard key={data.jdUid} jdData={data} />)
-      )}
+      {
+        jobData?.map((data) => {
+          return <JobCard key={data.jdUid} jdData={data} />
+        }
+        )
+      }
     </div>
   );
 };
