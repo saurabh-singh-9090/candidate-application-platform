@@ -1,0 +1,1 @@
+export const WEEKDAY_API = "https://api.weekday.technology/adhoc/getSampleJdJSON";

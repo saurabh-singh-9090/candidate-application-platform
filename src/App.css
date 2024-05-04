@@ -1,12 +1,18 @@
 .App {
-  text-align: center;
   font-family: sans-serif;
+  padding: 35px;
+  background: url(https://source.unsplash.com/E8Ufcyxz514/2400x1823) center / cover no-repeat fixed;
 }
-
+.filter-row{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
 .dropdown {
-  margin: 2px;
+  margin: 10px;
   z-index: 10000;
-  width: 300px;
+  width: 200px;
   position: relative;
 }
 .dropdown,
@@ -32,8 +38,6 @@
     align-self: stretch;
     width: 1px;
     background-color: rgb(204, 204, 204);
-    /* margin-bottom: 8px; */
-    /* margin-top: 8px; */
     display: flex;
     justify-content: flex-end;
     box-sizing: border-box;
@@ -59,3 +63,157 @@ button {
   width: 500px;
   margin: 0 auto;
 }
+
+
+.card-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.card{
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  width: 360px;
+  height: 615px;
+  border: 1px solid grey;
+  border-radius: 20px;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.07);
+  margin: 10px;
+  padding: 10px;
+  background-color: white;
+  overflow-y: hidden;
+}
+.jobpost-date{
+  display: flex;
+  justify-content: flex-start;
+  padding: 5px;
+}
+.jobpost-date p{
+  border: 1px solid grey;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 5px rgba(199, 196, 196, 0.07);
+  padding: 3px 8px;
+  font-size: 10px;
+}
+.job-section{
+  padding: 8px 16px;
+}
+.job-profile{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 0;
+}
+.job-profile img{
+  height: 80%;
+  width: 15%;
+  object-fit: contain;
+  margin-right: 10px;
+}
+.profile{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.company-name{
+  display: flex;
+  justify-content: flex-start;
+  font-size: 13px;
+  font-weight: 600; 
+  letter-spacing: 1px;
+  margin-bottom: 3px;
+  color: #8b8b8b;
+}
+.company-job-role{
+  display: flex;
+  justify-content: flex-start;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.company-location{
+  font-size: 11px;
+  font-weight: 500;
+  margin-top: 5px;
+  display: flex;
+  justify-content: flex-start;
+}
+.company-desc{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.company-desc p{
+  display: flex;
+  justify-content: flex-start;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 500;
+}
+.salary-details p{
+  display: flex;
+  justify-content: flex-start;
+  font-size: 14px;
+  font-weight: 400;
+  margin: 8px 0;
+  color: rgb(77, 89, 106);
+  line-height: 1.43;
+}
+.role-desc span{
+  display: flex;
+  justify-content: flex-start;
+  white-space: wrap;
+  font-size: 14px;
+  color: rgb(77, 89, 106);
+  height: 250px;
+  overflow: hidden;
+  mask-image: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255), rgba(255, 255, 255, 0));
+}
+.company-min-exp{
+  display: flex;
+  justify-content: flex-start;
+  font-size: 13px;
+  font-weight: 600; 
+  letter-spacing: 1px;
+  margin: 4px 0;
+  margin-top: 14px;
+  color: #8b8b8b;
+}
+
+.card-btns{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  /* padding: 8px 12px; */
+}
+
+.card-btns div{
+  display: flex;
+  padding: 12px 18px;
+  justify-content: center;
+  border-radius: 8px;
+}
+.apply-btn{
+  background-color: #55efc4;
+  margin-bottom: 6px;
+}
+.referral-btn{
+  color: white;
+  background-color: #4943da;
+}
+.view-more{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+  margin-top: -12px;
+  cursor: pointer;
+}
+.view-more a{
+  font-size: 14px;
+  text-decoration: none;
+  color: blue;
+}
+
