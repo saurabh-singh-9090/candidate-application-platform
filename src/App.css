@@ -1,7 +1,7 @@
 .App {
   font-family: sans-serif;
   padding: 35px;
-  background: url(https://source.unsplash.com/E8Ufcyxz514/2400x1823) center / cover no-repeat fixed;
+  /* background: url(https://source.unsplash.com/E8Ufcyxz514/2400x1823) center / cover no-repeat fixed; */
 }
 .filter-row{
   display: flex;
@@ -69,21 +69,27 @@ button {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 38px;
 }
 
 .card{
   display: flex;
   flex-direction: column;
   /* justify-content: space-between; */
-  width: 360px;
+  max-width: 360px;
   height: 615px;
-  border: 1px solid grey;
   border-radius: 20px;
-  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.07);
-  margin: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  margin: 15px;
   padding: 10px;
   background-color: white;
   overflow-y: hidden;
+  transition: transform .3s;
+}
+.card:hover{
+  transform: scale(1.01);
+
 }
 .jobpost-date{
   display: flex;
@@ -93,7 +99,7 @@ button {
 .jobpost-date p{
   border: 1px solid grey;
   border-radius: 10px;
-  box-shadow: 0 0 10px 5px rgba(199, 196, 196, 0.07);
+  box-shadow: rgba(6, 6, 6, 0.05) 0px 2px 6px 0px;
   padding: 3px 8px;
   font-size: 10px;
 }
@@ -217,3 +223,8 @@ button {
   color: blue;
 }
 
+.loader{
+  position: absolute;
+  bottom: 4px;
+  left: 40%;
+}

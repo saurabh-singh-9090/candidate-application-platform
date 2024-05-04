@@ -1,16 +1,19 @@
 import { useEffect, useState } from "react";
 import JobCard from "./JobCard";
 import { WEEKDAY_API } from "../utils/constants";
+import Loader from "./Loader";
 
 const Body = () => {
   const [jobData, setJobData] = useState([]);
+  const [limit, setLimit] = useState(3);
+  const [loading, setLoading] = useState(true);
 
   const fetchJobData = async () => {
     const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
     const body = JSON.stringify({
-      limit: 4,
+      limit: limit,
     });
 
     const requestOptions = {
@@ -20,22 +23,44 @@ const Body = () => {
       body,
     };
 
-    const response = await fetch( WEEKDAY_API, requestOptions);
+    const response = await fetch(WEEKDAY_API, requestOptions);
     const data = await response.json();
-    setJobData(data);
-    console.log("DATA--->>>",data)
+    setJobData((prev) => [...prev, ...data.jdList]);
+    setLoading(false);
+    console.log("DATA--->>>", data);
   };
 
   useEffect(() => {
     fetchJobData();
+  }, [limit]);
+
+  const InfiniteScrollHandler = async () => {
+    try {
+      if (
+        window.innerHeight + document.documentElement.scrollTop + 1 >=
+        document.documentElement.scrollHeight
+      ) {
+        setLoading(true);
+        setLimit((prev) => prev + 3);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", InfiniteScrollHandler);
+    return () => window.removeEventListener("scroll", InfiniteScrollHandler);
   }, []);
 
   return (
     <div className="card-container">
-        {/* <h3>Total Jobs available : {jobData.totalCount}</h3> */}
-        {jobData?.jdList?.map((data)=>(
-            <JobCard key={data.jdUid} jdData={data}/>
-        ))}
+      {loading ? (
+        <Loader />
+      ) : (
+        jobData?.map((data) => 
+        <JobCard key={data.jdUid} jdData={data} />)
+      )}
     </div>
   );
 };

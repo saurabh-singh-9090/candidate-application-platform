@@ -22,7 +22,7 @@ const JobCard = (props) => {
       </div>
       <div className="job-section">
             <div className="job-profile">
-            <img className="company-logo" src={logoUrl} />
+            <img className="company-logo" src={logoUrl} alt="logo.png"/>
             <div className="profile">
                 <div className="company-name">{companyName}</div>
                 <div className="company-job-role">{jobRole}</div>
@@ -32,7 +32,7 @@ const JobCard = (props) => {
             <div className="salary-details">
             <p>
                 Estimated Salary:{" "}
-                {`${salaryCurrencyCode} ${minJdSalary ? `${minJdSalary} - ` : ""}${maxJdSalary} LPA`}{" "}
+                {`₹ ${minJdSalary ? `${minJdSalary} - ` : ""}${maxJdSalary} LPA`}{" "}
                 ✅
             </p>
             </div>
