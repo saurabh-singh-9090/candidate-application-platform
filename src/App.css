@@ -12,14 +12,19 @@
 .dropdown {
   margin: 10px;
   z-index: 10000;
-  width: 200px;
+  width: 150px;
   position: relative;
 }
-.dropdown,
+.dropdown p{
+  margin: 0;
+  font-size: 14px;
+  color: #8b8b8b;
+}
+/* .dropdown,
 .dropdown * {
   z-index: 10;
-}
-.dropdown .dropdown-btn {
+} */
+/* .dropdown .dropdown-btn {
   cursor: pointer;
   background: white;
   display: flex;
@@ -30,32 +35,30 @@
   border-radius: 5px;
   color: grey;
   font-weight: 500;
-}
-.dropdown-icons{
-  /* padding: 5px; */
-}
-.divider{
+} */
+
+/* .divider{
     align-self: stretch;
     width: 1px;
     background-color: rgb(204, 204, 204);
     display: flex;
     justify-content: flex-end;
     box-sizing: border-box;
-}
-.dropdown-content {
+} */
+/* .dropdown-content {
   position: absolute;
   left: 0;
   background-color: white;
   width: 100%;
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.07);
-}
-.dropdown-content .item {
+} */
+/* .dropdown-content .item {
   padding: 10px;
   cursor: pointer;
-}
-.dropdown-content .item:hover {
+} */
+/* .dropdown-content .item:hover {
   background: rgb(196, 233, 247);
-}
+} */
 
 button {
   z-index: -1;
@@ -227,4 +230,21 @@ button {
   position: absolute;
   bottom: 4px;
   left: 40%;
+}
+
+.search-box-container{
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  min-height: 38px;
+}
+.search-box{
+  padding: 10px;
+  border-radius: 8px;
+  
+}
+.search-btn{
+  padding: 10px;
+  width: auto;
+  border-radius: 8px;
 }

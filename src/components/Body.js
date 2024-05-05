@@ -74,6 +74,7 @@ const Body = () => {
         }
         )
       }
+      {loading ? <Loader/> : null}
     </div>
   );
 };
