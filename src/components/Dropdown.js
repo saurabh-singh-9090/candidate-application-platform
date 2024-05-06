@@ -19,7 +19,7 @@ const Dropdown = (props) => {
       // Apply filter whenever jobData changes
       setFilteredJobData(filteredData1);
     }
-  }, [jobData, filteredArray]);
+  }, [jobData, filteredArray, selectedOption]);
 
   const dropdownFilterHandler = (option) => {
     const { value, label } = Array.isArray(option) ? option[0] : option;
@@ -40,9 +40,11 @@ const Dropdown = (props) => {
      For other dropdown Filters, Logic implementation is pending
   */
   const handleChange = (selectedOption) => {
+    console.log("selected---->>>>",selectedOption)
     setSelectedOption(selectedOption);
     // Extracting values from selected options
-    const selectedValues = Array.isArray(selectedOption) && selectedOption?.map((option) => option); 
+    const selectedValues = Array.isArray(selectedOption) ? selectedOption?.map((option) => option) : null; 
+    if(selectedValues == null) {return} ; //TODO
     Array.isArray(selectedOption)
       ? setFilteredArray(selectedOption)
       : setFilteredArray((prevFilteredArray) => [ ...prevFilteredArray, ...selectedValues]);

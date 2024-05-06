@@ -1,6 +1,10 @@
 /**
+ * 
+ * 
  * NOTE: Tried to create Dropdown box and options selection through vanilla CSS but for timely completion of this project
- * used React-select module
+ * used 'React-select' module
+ * 
+ * 
  */
 
 
@@ -9,7 +13,7 @@ import { useState } from "react";
 const Dropdown = () => {
 
   const [isActive, setIsActive] = useState(false);
-  const [selected, setIsSelected] = useState("Choose one");
+  const [selected, setIsSelected] = useState("Choose options...");
 
     return (
         <div className="dropdown">

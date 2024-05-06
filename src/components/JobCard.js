@@ -32,7 +32,7 @@ const JobCard = (props) => {
         <div className="salary-details">
           <p>
             Estimated Salary:{" "}
-            {`₹ ${minJdSalary ? `${minJdSalary} - ` : ""}${maxJdSalary} LPA`} ✅
+            {`₹ ${minJdSalary ? `${minJdSalary} - ` : ""}${maxJdSalary ? maxJdSalary : ''} LPA`} ✅
           </p>
         </div>
         <div className="company-overview">
