@@ -1,16 +1,16 @@
-import { useEffect, useState } from 'react';
-import Body from './components/Body';
-import FilterHeader from './components/FilterHeader';
-import { WEEKDAY_API } from './utils/constants';
-import { createContext } from 'react';
-import './App.css';
+import { useEffect, useState } from "react";
+import Body from "./components/Body";
+import FilterHeader from "./components/FilterHeader";
+import { WEEKDAY_API } from "./utils/constants";
+import { createContext } from "react";
+import "./App.css";
 
 export const MyContext = createContext("");
 
 function App() {
   const [jobData, setJobData] = useState([]);
-  const [filteredJobData, setFilteredJobData] = useState([])
-  const [limit, setLimit] = useState(3);
+  const [filteredJobData, setFilteredJobData] = useState([]);
+  const [limit, setLimit] = useState(4);
   const [loading, setLoading] = useState(true);
   const [fetchedJobIds, setFetchedJobIds] = useState([]);
   const [filteredArray, setFilteredArray] = useState([]);
@@ -37,14 +37,17 @@ function App() {
 
     // Filtering out already fetched job card IDs to avoid duplicate cards rendering
     const newJobData = data.jdList.filter(
-      (job) => !fetchedJobIds.includes(job.jdUid)
+      (job) => !fetchedJobIds.includes(job.jdUid),
     );
 
     setJobData((prev) => [...prev, ...newJobData]);
 
     // filteredData will be used and updated everywhere inside the components and will be accessible everywhere through context API
     setFilteredJobData((prev) => [...prev, ...newJobData]);
-    setFetchedJobIds((prev) => [...prev, ...newJobData.map((job) => job.jdUid)]);
+    setFetchedJobIds((prev) => [
+      ...prev,
+      ...newJobData.map((job) => job.jdUid),
+    ]);
 
     setLoading(false);
   };
@@ -57,10 +60,11 @@ function App() {
   const InfiniteScrollHandler = async () => {
     try {
       if (
-        window.innerHeight + document.documentElement.scrollTop + 1 >= document.documentElement.scrollHeight
+        window.innerHeight + document.documentElement.scrollTop + 1 >=
+        document.documentElement.scrollHeight
       ) {
         setLoading(true);
-        setLimit((prev) => prev + 3);
+        setLimit((prev) => prev + 4);
       }
     } catch (error) {
       console.log(error);
@@ -74,7 +78,15 @@ function App() {
 
   return (
     <div className="App">
-      <MyContext.Provider value={{ jobData, filteredJobData, setFilteredJobData, filteredArray, setFilteredArray }}>
+      <MyContext.Provider
+        value={{
+          jobData,
+          filteredJobData,
+          setFilteredJobData,
+          filteredArray,
+          setFilteredArray,
+        }}
+      >
         <FilterHeader />
         <Body loading={loading} />
       </MyContext.Provider>
