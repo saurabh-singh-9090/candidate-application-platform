@@ -15,14 +15,18 @@
 
 # Project Snapshots
 1. UI dashboard without any filters applied
-![image](https://github.com/saurabh-singh-9090/candidate-application-platform/assets/164728355/0d870f0a-0165-48b2-a603-d695b98bd069)
-2. With filters applied for 'Location' dropdown list
-![image](https://github.com/saurabh-singh-9090/candidate-application-platform/assets/164728355/ad1f81e0-50a2-4701-9fca-fcb041bb4080)
-3. With combined filters applied for 'Location' and 'Roles' dropdown list
-![image](https://github.com/saurabh-singh-9090/candidate-application-platform/assets/164728355/f2f4d005-5a3a-4a8a-9cb1-345e70095d30)
-4. UI on a bigger screen
+   ![image](https://github.com/saurabh-singh-9090/candidate-application-platform/assets/164728355/e76e389f-21c3-4d5b-848f-f9ca43fbe010)
+
+3. With filters applied for 'Location' dropdown list
+  ![image](https://github.com/saurabh-singh-9090/candidate-application-platform/assets/164728355/eebaeb21-facd-44fa-aa33-bf8cefac9529)
+
+4. With combined filters applied for 'Location' and 'Roles' dropdown list
+  ![image](https://github.com/saurabh-singh-9090/candidate-application-platform/assets/164728355/89371525-6d22-499f-b091-03e4e6ff912c)
+
+5. UI on a bigger screen
 ![image](https://github.com/saurabh-singh-9090/candidate-application-platform/assets/164728355/0dff4010-fa83-421f-9925-d95a238ebc4e)
-5. UI on smaller devices
+
+7. UI on smaller devices
 <img width="367" alt="image" src="https://github.com/saurabh-singh-9090/candidate-application-platform/assets/164728355/c56ad0e3-1844-493f-a3fa-349d4622d463">
 
 
