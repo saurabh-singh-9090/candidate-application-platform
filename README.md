@@ -1,5 +1,5 @@
 # Live Demo of the website
-https://663a84827985294e2de36553--imaginative-basbousa-6955cc.netlify.app/
+https://6675825cdd68c88efbfc242d--vermillion-puffpuff-cd09be.netlify.app/
 
 # Commands to run locally
 - After cloning github project repository in local system, run 'npm i' to install all npm packages and dependencies
