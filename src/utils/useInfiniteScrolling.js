@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 const useInfiniteScrolling = () => {
 
-    const [limit, setLimit] = useState(4);
+    const [limit, setLimit] = useState(8);
 
      //Handler fn to control infinite scrolling feature
      const InfiniteScrollHandler = async () => {
